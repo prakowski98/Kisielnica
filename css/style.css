@@ -250,26 +250,27 @@ p {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(26, 62, 25, 0.75), rgba(26, 26, 26, 0.55));
+  background: linear-gradient(135deg, rgba(26, 62, 25, 0.82), rgba(26, 26, 26, 0.72));
 }
 
 .hero-content {
   position: relative;
   z-index: 1;
-  padding: 2rem 1rem;
+  padding: 2rem 1.5rem;
   max-width: 800px;
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: var(--radius);
 }
 
 .hero h1 {
-  color: var(--color-white);
+  color: #FFFFFF;
   margin-bottom: 1rem;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero p {
+  color: #FFFFFF;
   font-size: clamp(1rem, 2vw, 1.25rem);
   margin-bottom: 1.5rem;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 /* ===== Buttons ===== */
@@ -315,13 +316,13 @@ p {
 }
 
 .btn-outline {
-  background: transparent;
-  color: var(--color-white);
-  border-color: var(--color-white);
+  background: rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
+  border-color: #FFFFFF;
 }
 
 .btn-outline:hover {
-  background: var(--color-white);
+  background: #FFFFFF;
   color: var(--color-primary);
 }
 
@@ -456,7 +457,7 @@ p {
 }
 
 .page-header p {
-  color: rgba(255, 255, 255, 0.85);
+  color: #FFFFFF;
   max-width: 600px;
   margin: 0.5rem auto 0;
 }
@@ -598,9 +599,9 @@ p {
 .lightbox-close,
 .lightbox-prev,
 .lightbox-next {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.2);
   color: white;
-  border: none;
+  border: 2px solid rgba(255, 255, 255, 0.6);
   font-size: 2rem;
   width: 48px;
   height: 48px;
@@ -684,7 +685,7 @@ p {
 }
 
 .pricing-table tbody tr:hover {
-  background: #e8e5d8;
+  background: #e2dfd2;
 }
 
 /* ===== Contact Page ===== */
@@ -750,7 +751,7 @@ p {
 /* ===== Footer ===== */
 .site-footer {
   background: var(--color-primary-dark);
-  color: rgba(255, 255, 255, 0.85);
+  color: #FFFFFF;
   padding: 3rem 0 1.5rem;
 }
 
@@ -768,7 +769,7 @@ p {
 }
 
 .footer-section a {
-  color: rgba(255, 255, 255, 0.85);
+  color: #FFFFFF;
   text-decoration: underline;
   text-underline-offset: 2px;
 }
