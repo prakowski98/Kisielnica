@@ -1,0 +1,183 @@
+/* ===== Skip Link ===== */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 10000;
+  padding: 0.75rem 1.5rem;
+  background: var(--color-primary-dark);
+  color: var(--color-white);
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 0 0 8px 8px;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* ===== Focus Styles ===== */
+*:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ===== Screen Reader Only ===== */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===== Reduced Motion ===== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ===== High Contrast / Forced Colors ===== */
+@media (forced-colors: active) {
+  .card,
+  .btn,
+  .hero {
+    border: 1px solid ButtonText;
+  }
+
+  .btn {
+    background: ButtonFace;
+    color: ButtonText;
+  }
+}
+
+/* ===== Dark Mode ===== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #1a1a1a;
+    --color-bg-alt: #2a2a2a;
+    --color-text: #e8e8e8;
+    --color-text-light: #b0b0b0;
+    --color-white: #1a1a1a;
+    --color-primary: #4a9e47;
+    --color-primary-dark: #3a7e37;
+    --color-secondary: #c9a227;
+    --color-accent: #d4b84a;
+    --color-focus: #5b9bd5;
+  }
+
+  body {
+    color-scheme: dark;
+  }
+
+  .site-header {
+    background: #111111;
+    border-bottom-color: #333;
+  }
+
+  .card {
+    background: #2a2a2a;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  }
+
+  .hero-overlay {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5));
+  }
+
+  .site-footer {
+    background: #111111;
+  }
+
+  img {
+    opacity: 0.9;
+  }
+
+  .pricing-table th {
+    background: #333;
+  }
+
+  .pricing-table td {
+    border-color: #444;
+  }
+
+  .pricing-table tr:nth-child(even) {
+    background: #252525;
+  }
+
+  .mobile-nav {
+    background: #1a1a1a;
+  }
+
+  .lightbox-overlay {
+    background: rgba(0, 0, 0, 0.95);
+  }
+}
+
+/* ===== Print Styles ===== */
+@media print {
+  .site-header,
+  .site-footer,
+  .skip-link,
+  .hero,
+  .cta-banner,
+  .mobile-nav-toggle,
+  .mobile-nav,
+  .lightbox-overlay,
+  .map-container {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+
+  main {
+    padding: 0;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+    font-style: italic;
+  }
+
+  a[href^="#"]::after,
+  a[href^="javascript"]::after {
+    content: "";
+  }
+
+  .card {
+    box-shadow: none;
+    border: 1px solid #ccc;
+    break-inside: avoid;
+  }
+
+  h1, h2, h3 {
+    break-after: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+}
