@@ -188,6 +188,10 @@
   }
 
   .cta-banner .phone-link {
+    color: #FFFFFF;
+  }
+
+  .cta-banner .phone-link:hover {
     color: #e0c85c;
   }
 
@@ -208,6 +212,11 @@
     opacity: 0.9;
   }
 
+  .pricing-table {
+    background: #2a2a2a;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  }
+
   .pricing-table thead {
     background: #333;
   }
@@ -217,7 +226,12 @@
   }
 
   .pricing-table td {
+    color: #e8e8e8;
     border-color: #444;
+  }
+
+  .pricing-table td:first-child {
+    color: #FFFFFF;
   }
 
   .pricing-table tbody tr:nth-child(even) {
@@ -266,6 +280,58 @@
     background: #222222;
   }
 
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    background: #333;
+    color: #e8e8e8;
+    border-color: #666;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus {
+    border-color: #5b9bd5;
+    box-shadow: 0 0 0 3px rgba(91, 155, 213, 0.3);
+  }
+
+  .form-group label {
+    color: #e8e8e8;
+  }
+
+  .form-error {
+    color: #f87171;
+  }
+
+  .form-hint {
+    color: #b0b0b0;
+  }
+
+  .form-group input[aria-invalid="true"],
+  .form-group textarea[aria-invalid="true"] {
+    border-color: #f87171;
+  }
+
+  .form-status--success {
+    background: #1a3e1a;
+    color: #7dd47b;
+    border-color: #7dd47b;
+  }
+
+  .form-status--error {
+    background: #3e1a1a;
+    color: #f87171;
+    border-color: #f87171;
+  }
+
+  .contact-form h2 {
+    color: #7dd47b;
+  }
+
+  .form-required-note {
+    color: #b0b0b0;
+  }
+
   .lightbox-overlay {
     background: rgba(0, 0, 0, 0.95);
   }
@@ -273,6 +339,14 @@
   .hours-table th,
   .hours-table td {
     border-color: #444;
+  }
+
+  .hours-table th {
+    color: #FFFFFF;
+  }
+
+  .hours-table td {
+    color: #e8e8e8;
   }
 
   .map-container {
@@ -289,7 +363,8 @@
   .mobile-nav-toggle,
   .mobile-nav,
   .lightbox-overlay,
-  .map-container {
+  .map-container,
+  .contact-form {
     display: none !important;
   }
 

@@ -115,20 +115,65 @@
             </table>
           </div>
 
-          <div>
-            <h2>Nasza lokalizacja</h2>
-            <div class="map-container">
-              <div id="map" aria-label="Mapa lokalizacji ośrodka jeździeckiego w Kisielnicy" tabindex="0"></div>
-              <noscript>
-                <p style="padding: 1rem;">Mapa wymaga włączonego JavaScript. Nasz adres: Kisielnica 12, 18-400 Łomża. <a href="https://www.openstreetmap.org/?mlat=53.295&mlon=22.055#map=14/53.295/22.055">Zobacz na OpenStreetMap</a>.</p>
-              </noscript>
-            </div>
+          <div class="contact-form" id="formularz">
+            <h2 id="formularz-heading">Napisz do nas</h2>
+            <p class="form-required-note">Pola oznaczone <span class="required-mark" aria-hidden="true">*</span> są wymagane.</p>
+            <form id="contact-form" novalidate aria-labelledby="formularz-heading">
+              <div class="form-group">
+                <label for="form-name">Imię i nazwisko <span class="required-mark" aria-hidden="true">*</span></label>
+                <input type="text" id="form-name" name="name" required autocomplete="name" aria-required="true" aria-describedby="form-name-error">
+                <p class="form-error" id="form-name-error" role="alert">Proszę podać imię i nazwisko.</p>
+              </div>
+              <div class="form-group">
+                <label for="form-email">Adres e-mail <span class="required-mark" aria-hidden="true">*</span></label>
+                <input type="email" id="form-email" name="email" required autocomplete="email" aria-required="true" aria-describedby="form-email-hint form-email-error">
+                <p class="form-hint" id="form-email-hint">Np. jan.kowalski@example.com</p>
+                <p class="form-error" id="form-email-error" role="alert">Proszę podać poprawny adres e-mail.</p>
+              </div>
+              <div class="form-group">
+                <label for="form-phone">Telefon</label>
+                <input type="tel" id="form-phone" name="phone" autocomplete="tel" aria-describedby="form-phone-hint">
+                <p class="form-hint" id="form-phone-hint">Opcjonalnie, np. +48 123 456 789</p>
+              </div>
+              <div class="form-group">
+                <label for="form-subject">Temat <span class="required-mark" aria-hidden="true">*</span></label>
+                <select id="form-subject" name="subject" required aria-required="true" aria-describedby="form-subject-error">
+                  <option value="">— Wybierz temat —</option>
+                  <option value="jazda-konna">Jazda konna</option>
+                  <option value="hipoterapia">Hipoterapia</option>
+                  <option value="oboz">Obóz jeździecki</option>
+                  <option value="urodziny">Urodziny w siodle</option>
+                  <option value="bryczka">Przejażdżka bryczką</option>
+                  <option value="inne">Inne</option>
+                </select>
+                <p class="form-error" id="form-subject-error" role="alert">Proszę wybrać temat wiadomości.</p>
+              </div>
+              <div class="form-group">
+                <label for="form-message">Wiadomość <span class="required-mark" aria-hidden="true">*</span></label>
+                <textarea id="form-message" name="message" required aria-required="true" aria-describedby="form-message-error"></textarea>
+                <p class="form-error" id="form-message-error" role="alert">Proszę wpisać treść wiadomości.</p>
+              </div>
+              <button type="submit" class="btn btn-primary">Wyślij wiadomość</button>
+              <div id="form-status" class="form-status" role="status" aria-live="polite" hidden></div>
+            </form>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section section-alt" aria-labelledby="dojazd-heading">
+    <section class="section section-alt" aria-labelledby="lokalizacja-heading">
+      <div class="container">
+        <h2 id="lokalizacja-heading">Nasza lokalizacja</h2>
+        <div class="map-container">
+          <div id="map" aria-label="Mapa lokalizacji ośrodka jeździeckiego w Kisielnicy" tabindex="0"></div>
+          <noscript>
+            <p style="padding: 1rem;">Mapa wymaga włączonego JavaScript. Nasz adres: Kisielnica 12, 18-400 Łomża. <a href="https://www.openstreetmap.org/?mlat=53.295&mlon=22.055#map=14/53.295/22.055">Zobacz na OpenStreetMap</a>.</p>
+          </noscript>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="dojazd-heading">
       <div class="container">
         <div class="content-text">
           <h2 id="dojazd-heading">Jak do nas dojechać?</h2>
@@ -191,5 +236,6 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script defer src="js/main.js"></script>
   <script defer src="js/map.js"></script>
+  <script defer src="js/contact-form.js"></script>
 </body>
 </html>
