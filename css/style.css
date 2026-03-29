@@ -259,7 +259,7 @@ p {
   z-index: 1;
   padding: 2rem 1.5rem;
   max-width: 800px;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.62);
   border-radius: var(--radius);
 }
 
@@ -541,6 +541,17 @@ p {
   gap: 0.75rem;
 }
 
+button.gallery-item {
+  display: block;
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  width: 100%;
+}
+
 .gallery-item {
   border-radius: var(--radius);
   overflow: hidden;
@@ -556,7 +567,7 @@ p {
 }
 
 .gallery-item:hover img,
-.gallery-item:focus img {
+.gallery-item:focus-visible img {
   transform: scale(1.05);
 }
 
@@ -872,7 +883,8 @@ p {
 .form-group select:focus {
   border-color: var(--color-focus);
   box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.2);
-  outline: none;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
 
 .form-group textarea {

@@ -1,5 +1,6 @@
 /**
  * Accessible Lightbox Gallery
+ * WCAG 2.2 AA: native <button> triggers, aria-labelledby, inert background, focus trap
  */
 (function () {
   'use strict';
@@ -11,17 +12,33 @@
   var currentIndex = 0;
   var lastFocusedElement = null;
 
+  // Elements to mark inert when lightbox is open
+  function getBackgroundElements() {
+    return document.querySelectorAll('header, main, footer, .a11y-toolbar, .mobile-nav');
+  }
+
+  function setBackgroundInert(inert) {
+    getBackgroundElements().forEach(function (el) {
+      if (inert) {
+        el.setAttribute('inert', '');
+      } else {
+        el.removeAttribute('inert');
+      }
+    });
+  }
+
   // Build lightbox DOM
   function createLightbox() {
     overlay = document.createElement('div');
     overlay.className = 'lightbox-overlay';
     overlay.setAttribute('role', 'dialog');
     overlay.setAttribute('aria-modal', 'true');
-    overlay.setAttribute('aria-label', 'Powiększone zdjęcie');
+    overlay.setAttribute('aria-labelledby', 'lightbox-title');
     overlay.setAttribute('hidden', '');
 
     overlay.innerHTML =
       '<div class="lightbox-content">' +
+        '<h2 id="lightbox-title" class="sr-only"></h2>' +
         '<button class="lightbox-close" aria-label="Zamknij galerię">&times;</button>' +
         '<button class="lightbox-prev" aria-label="Poprzednie zdjęcie">&#8249;</button>' +
         '<div class="lightbox-img-wrap">' +
@@ -49,6 +66,7 @@
     overlay.removeAttribute('hidden');
     overlay.classList.add('is-open');
     document.body.style.overflow = 'hidden';
+    setBackgroundInert(true);
     overlay.querySelector('.lightbox-close').focus();
     document.addEventListener('keydown', handleLightboxKeys);
   }
@@ -57,6 +75,7 @@
     overlay.setAttribute('hidden', '');
     overlay.classList.remove('is-open');
     document.body.style.overflow = '';
+    setBackgroundInert(false);
     document.removeEventListener('keydown', handleLightboxKeys);
     if (lastFocusedElement) {
       lastFocusedElement.focus();
@@ -70,6 +89,11 @@
     var altText = item.querySelector('img').alt;
     img.src = fullSrc;
     img.alt = altText;
+
+    // Update dialog heading for screen readers
+    var title = overlay.querySelector('#lightbox-title');
+    title.textContent = altText;
+
     overlay.querySelector('.lightbox-counter').textContent =
       'Zdjęcie ' + (currentIndex + 1) + ' z ' + galleryItems.length;
   }
@@ -118,21 +142,14 @@
     }
   }
 
-  // Attach click/keyboard handlers to gallery items
+  // Set aria-label on native <button> gallery items
   galleryItems.forEach(function (item, index) {
-    item.setAttribute('tabindex', '0');
-    item.setAttribute('role', 'button');
-    item.setAttribute('aria-label', 'Powiększ: ' + (item.querySelector('img') ? item.querySelector('img').alt : 'zdjęcie'));
+    var imgEl = item.querySelector('img');
+    var altText = imgEl ? imgEl.alt : 'zdjęcie';
+    item.setAttribute('aria-label', 'Powiększ: ' + altText);
 
     item.addEventListener('click', function () {
       openLightbox(index);
-    });
-
-    item.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        openLightbox(index);
-      }
     });
   });
 
