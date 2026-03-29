@@ -101,17 +101,41 @@
   color: #FFD700 !important;
 }
 
-.high-contrast .hero-content {
-  background: rgba(0, 0, 0, 0.9) !important;
+.high-contrast .hero-overlay {
+  background: rgba(0, 0, 0, 0.85) !important;
 }
 
-.high-contrast .hero h1,
-.high-contrast .hero p,
+.high-contrast .hero-content {
+  background: #000000 !important;
+}
+
+.high-contrast .hero h1 {
+  color: #FFFF00 !important;
+}
+
+.high-contrast .hero p {
+  color: #FFFFFF !important;
+}
+
+.high-contrast .hero .btn-outline {
+  background: #FFD700 !important;
+  color: #000000 !important;
+  border: 2px solid #FFFF00 !important;
+}
+
+.high-contrast .hero .btn-outline:hover {
+  background: #FFFF00 !important;
+  color: #000000 !important;
+}
+
 .high-contrast .page-header h1,
 .high-contrast .page-header p,
-.high-contrast .cta-banner h2,
 .high-contrast .cta-banner p {
   color: #FFFFFF !important;
+}
+
+.high-contrast .cta-banner h2 {
+  color: #FFFF00 !important;
 }
 
 .high-contrast .card,
@@ -126,7 +150,7 @@
 .high-contrast .content-text h2,
 .high-contrast .contact-info h2,
 .high-contrast .contact-form h2 {
-  color: #FFD700 !important;
+  color: #FFFF00 !important;
 }
 
 .high-contrast .card p,
@@ -245,7 +269,7 @@
 
 .high-contrast .feature-item h3,
 .high-contrast h1, .high-contrast h2, .high-contrast h3 {
-  color: #FFD700 !important;
+  color: #FFFF00 !important;
 }
 
 .high-contrast *:focus-visible {

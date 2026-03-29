@@ -88,6 +88,7 @@ p {
   z-index: 1000;
   background: var(--color-white);
   border-bottom: 2px solid var(--color-primary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   height: var(--header-height);
   display: flex;
   align-items: center;
@@ -250,7 +251,7 @@ p {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(26, 62, 25, 0.82), rgba(26, 26, 26, 0.72));
+  background: linear-gradient(135deg, rgba(26, 62, 25, 0.38), rgba(26, 26, 26, 0.35));
 }
 
 .hero-content {
@@ -258,7 +259,7 @@ p {
   z-index: 1;
   padding: 2rem 1.5rem;
   max-width: 800px;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(0, 0, 0, 0.45);
   border-radius: var(--radius);
 }
 
