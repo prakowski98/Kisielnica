@@ -39,7 +39,7 @@
 <body>
   <a href="#main" class="skip-link">Przejdź do treści</a>
 
-  <header class="site-header" role="banner">
+  <header class="site-header">
     <div class="header-inner">
       <a href="index.html" class="site-logo" aria-label="Strona główna — Ośrodek Jeździectwa w Kisielnicy">
         <svg aria-hidden="true" viewBox="0 0 32 32" fill="currentColor"><path d="M16 2C8.268 2 2 8.268 2 16s6.268 14 14 14 14-6.268 14-14S23.732 2 16 2zm6.5 20.5c-1.2 1.8-3.5 3-6 3.5-.8-1.2-1.2-2.5-1-4 .3-2 1.5-3.5 3-4.5l2-1.5c.5-.4 1-.3 1.2.2.2.5 0 1-.4 1.3l-1.5 1c-1 .7-1.8 1.7-2 3-.1.8.1 1.5.4 2.2 1.5-.5 2.8-1.3 3.5-2.5.5-.8.3-1.5-.2-2.2l-3-3.5c-.8-1-1.2-2.2-1-3.5.2-1.5 1-2.8 2.2-3.5 1-.6 2-.8 3-.5.5.2.7.7.5 1.2-.2.5-.7.7-1.2.5-.5-.1-1 0-1.5.3-.7.4-1.2 1.2-1.3 2-.1.8.1 1.5.6 2.1l3 3.5c.8 1 1.2 2.5.4 4z"/></svg>
@@ -107,6 +107,13 @@
             <li><strong>Metoda oceny dostępności cyfrowej:</strong> samoocena przeprowadzona przez podmiot publiczny z uwzględnieniem wytycznych WCAG 2.2 na poziomie AA.</li>
           </ul>
 
+          <h3>Pasek dostępności</h3>
+          <p>Na każdej stronie witryny u góry widoczny jest <strong>pasek dostępności</strong> umożliwiający:</p>
+          <ul>
+            <li><strong>Zmianę rozmiaru czcionki</strong> — przyciski A&minus;/A/A+ pozwalają zmniejszać, resetować i powiększać tekst w zakresie 14–22 pikseli. Ustawienie jest zapamiętywane między wizytami.</li>
+            <li><strong>Tryb wysokiego kontrastu</strong> — przycisk „Wysoki kontrast" przełącza stronę w tryb czarnego tła z białym tekstem i żółtymi linkami, zapewniając maksymalną czytelność. Ustawienie jest zapamiętywane między wizytami.</li>
+          </ul>
+
           <h3>Skróty klawiaturowe</h3>
           <p>Na stronie internetowej można używać standardowych skrótów klawiaturowych przeglądarki. Dodatkowo:</p>
           <ul>
@@ -117,8 +124,32 @@
             <li><strong>Strzałki ← →</strong> — nawigacja w galerii zdjęć</li>
           </ul>
 
+          <h3>Zgodność ze standardami</h3>
+          <p>Strona została zaprojektowana zgodnie z następującymi standardami i wytycznymi:</p>
+          <ul>
+            <li>WCAG 2.2 na poziomie AA (Web Content Accessibility Guidelines)</li>
+            <li>Ustawa z dnia 4 kwietnia 2019 r. o dostępności cyfrowej stron internetowych i aplikacji mobilnych podmiotów publicznych (Dz.U. 2019 poz. 848)</li>
+            <li>Europejski Akt o Dostępności (Dyrektywa Parlamentu Europejskiego i Rady (UE) 2019/882)</li>
+          </ul>
+          <p>Zastosowane rozwiązania techniczne obejmują:</p>
+          <ul>
+            <li>Semantyczny HTML5 — poprawna struktura nagłówków, landmarków i regionów</li>
+            <li>Atrybuty ARIA — <code>aria-label</code>, <code>aria-live</code>, <code>aria-expanded</code>, <code>aria-current</code> tam, gdzie to konieczne</li>
+            <li>Kontrast kolorów — minimalne proporcje 4,5:1 dla tekstu normalnego, 3:1 dla tekstu dużego i elementów interfejsu</li>
+            <li>Rozmiar celów dotykowych — minimum 44×44 pikseli dla wszystkich elementów interaktywnych</li>
+            <li>Widoczny fokus klawiatury — <code>focus-visible</code> z wyraźnym konturem 3px na wszystkich elementach</li>
+            <li>Pułapka fokusa — w oknach dialogowych (galeria, menu mobilne) fokus nie opuszcza okna</li>
+            <li>Redukcja animacji — poszanowanie preferencji <code>prefers-reduced-motion</code></li>
+            <li>Tryb ciemny — automatyczne dostosowanie do <code>prefers-color-scheme: dark</code></li>
+            <li>Tryb wymuszonych kolorów (Windows High Contrast) — obsługa <code>forced-colors: active</code></li>
+            <li>Link „Przejdź do treści" — na początku każdej strony</li>
+          </ul>
+
           <h3>Formularz kontaktowy</h3>
           <p>Na stronie <a href="kontakt.html#formularz">Kontakt</a> dostępny jest formularz kontaktowy z pełną obsługą dostępności: etykiety powiązane z polami, walidacja po stronie klienta z komunikatami błędów powiązanymi przez <code>aria-describedby</code>, oraz region <code>aria-live</code> informujący o statusie wysłania.</p>
+
+          <h3>Treści niedostępne</h3>
+          <p>Na dzień sporządzenia deklaracji nie zidentyfikowano treści niedostępnych. W przypadku znalezienia barier dostępności prosimy o kontakt za pośrednictwem danych podanych poniżej.</p>
 
           <h3>Informacje zwrotne i dane kontaktowe</h3>
           <p>W przypadku problemów z dostępnością strony internetowej prosimy o kontakt:</p>
@@ -156,7 +187,7 @@
     </section>
   </main>
 
-  <footer class="site-footer" role="contentinfo">
+  <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-section">
@@ -190,8 +221,8 @@
           </ul>
           <h3>Znajdź nas</h3>
           <ul>
-            <li><a href="https://www.facebook.com/p/%C5%9Arodek-Je%C5%BAdziectwa-i-Rehabilitacji-Konnej-w-Kisielnicy-61577225513314/" aria-label="Odwiedź nasz profil na Facebooku" rel="noopener noreferrer" target="_blank">Facebook</a></li>
-            <li><a href="https://www.instagram.com/osrodek_kisielnica/" aria-label="Odwiedź nasz profil na Instagramie" rel="noopener noreferrer" target="_blank">Instagram</a></li>
+            <li><a href="https://www.facebook.com/p/%C5%9Arodek-Je%C5%BAdziectwa-i-Rehabilitacji-Konnej-w-Kisielnicy-61577225513314/" aria-label="Odwiedź nasz profil na Facebooku (otwiera się w nowym oknie)" rel="noopener noreferrer" target="_blank">Facebook</a></li>
+            <li><a href="https://www.instagram.com/osrodek_kisielnica/" aria-label="Odwiedź nasz profil na Instagramie (otwiera się w nowym oknie)" rel="noopener noreferrer" target="_blank">Instagram</a></li>
           </ul>
         </div>
       </div>
@@ -201,6 +232,7 @@
     </div>
   </footer>
 
+  <script src="js/accessibility-toolbar.js"></script>
   <script defer src="js/main.js"></script>
 </body>
 </html>
